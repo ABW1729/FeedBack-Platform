@@ -7,19 +7,25 @@ A role-based feedback form builder and response analysis platform with **admin**
 ## 📌 Features
 
 - ✅ User registration and login with role selection (`admin`, `moderator`, `user`)
-- 🧑‍💼 Admin/Moderator: Create dynamic forms with multiple questions (MCQ/Subjective)
-- 🧾 Users: Submit feedback responses to available forms
-- 🔀 Reordering of questions and options using arrow buttons
-- 🗑️ Deletion of questions and options
-- 🔒 Form validation:
-  - At least 1 question per form
-  - Non-empty title
-  - At least 1 option for MCQs
-- 🌐 Live deployment on Railway
-- 🧪 Modular and scalable code structure
-- ⚙️ Protected routes based on roles
-- 📊 Responses stored in MongoDB
-- 📬 Email/password-based authentication
+- 🧑‍💼 **Admin/Moderator**:
+  - Create dynamic forms with multiple questions (MCQ/Subjective)
+  - Edit, delete, reorder questions and options using arrow buttons
+  - View form submission summary and export responses to CSV
+  - See all form responses in a tabular format
+- 🧾 **Users**:
+  - Submit feedback responses to available forms
+- 🔄 Reordering of questions and options via up/down arrow buttons
+- 🗑️ Deletion of individual questions and options
+- 🔒 **Form validation**:
+  - Must have at least 1 question
+  - Question title must not be empty
+  - MCQs must contain at least 1 non-empty option
+- 🧪 Modular and scalable codebase (separate frontend/backend structure)
+- ⚙️ Role-based protected API routes
+- 📊 Feedback responses stored and queried from MongoDB
+- 🧾 Summary(Chart based) view of all form submissions with export-to-CSV option
+- 🌐 Live deployment hosted on **Railway**
+- 📬 Email and password-based authentication system with JWT
 
 ---
 
