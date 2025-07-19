@@ -24,7 +24,7 @@ A role-based feedback form builder and response analysis platform with **admin**
 - ⚙️ Role-based protected API routes
 - 📊 Feedback responses stored and queried from MongoDB
 - 🧾 Summary(Chart based) view of all form submissions with export-to-CSV option
-- 🌐 Live deployment hosted on **Railway**
+- 🌐 Live deployment hosted on **Vercel**
 - 📬 Email and password-based authentication system with JWT
 
 ---
