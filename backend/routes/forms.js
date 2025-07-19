@@ -5,19 +5,37 @@ const { authGuard } = require('../middleware/auth');
 const router = express.Router();
 
 router.post('/', authGuard, async (req, res) => {
-  const form = new Form({ ...req.body, owner: req.user.id });
-  await form.save();
-  res.json(form);
+  try {
+    const form = new Form({ ...req.body, owner: req.user.id });
+    await form.save();
+    res.json(form);
+  } catch (err) {
+    console.error('Error creating form:', err);
+    res.status(500).json({ error: 'Failed to create form' });
+  }
 });
 
 router.get('/', authGuard, async (req, res) => {
-  const forms = await Form.find({ owner: req.user.id });
-  res.json(forms);
+  try {
+    const forms = await Form.find({ owner: req.user.id });
+    res.json(forms);
+  } catch (err) {
+    console.error('Error fetching forms:', err);
+    res.status(500).json({ error: 'Failed to fetch forms' });
+  }
 });
 
 router.get('/:id', async (req, res) => {
-  const form = await Form.findById(req.params.id);
-  res.json(form);
+  try {
+    const form = await Form.findById(req.params.id);
+    if (!form) {
+      return res.status(404).json({ error: 'Form not found' });
+    }
+    res.json(form);
+  } catch (err) {
+    console.error('Error fetching form:', err);
+    res.status(500).json({ error: 'Failed to fetch form' });
+  }
 });
 
 router.put('/:id', authGuard, async (req, res) => {

@@ -95,6 +95,11 @@ const handleSubmit = () => {
     return;
   }
 
+  const handleLogOut=()=>{
+    logout();
+    navigate("/");
+  }
+
   for (let i = 0; i < questions.length; i++) {
     const q = questions[i];
     if (!q.question || q.question.trim() === '') {
@@ -144,7 +149,7 @@ const moveOptionDown = (qIndex, optIndex) => {
           </button>
           <button
             className="text-sm text-red-600 underline"
-            onClick={logout}
+            onClick={handleLogOut}
           >
             Logout
           </button>

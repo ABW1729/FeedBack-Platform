@@ -57,7 +57,6 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Forms List */}
         {forms.length === 0 ? (
           <p className="text-gray-500">No forms created yet.</p>
         ) : (
